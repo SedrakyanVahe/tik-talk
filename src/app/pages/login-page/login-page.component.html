@@ -11,15 +11,26 @@
     />
   </label>
 
-  <label class="tt-control-label">
-    Password
-    <input
-      class="tt-input"
-      type="text"
-      placeholder="Password"
-      formControlName="password"
-    />
-  </label>
+  <div class="password-input">
+    <label class="tt-control-label">
+      Password
+      <input
+        class="tt-input"
+        type="text"
+        placeholder="Password"
+        formControlName="password"
+        [type]="isPasswordVisible() ? 'text' : 'password'"
+      />
+    </label>
+
+    <button
+      class="password-eye-btn"
+      type="button"
+      (click)="isPasswordVisible.set(!isPasswordVisible())"
+    >
+      {{ isPasswordVisible() ? "Hide" : "Show" }}
+    </button>
+  </div>
 
   <button class="btn" type="submit">Login</button>
 </form>
