@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --dark-color: #1d1c1c;
   --light-color: #fff;
@@ -7,11 +15,12 @@
 body {
   background: var(--dark-color);
   color: var(--light-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
 }
 
 .btn {
+  width: 100%;
   border: none;
   background: var(--primary-color);
   color: var(--dark-color);
@@ -20,4 +29,26 @@ body {
   font-size: 14px;
   line-height: 24px;
   border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--light-color);
+  }
+}
+
+.tt-control-label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.tt-input {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  margin-bottom: 12px;
 }
